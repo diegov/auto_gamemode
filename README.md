@@ -45,6 +45,10 @@ Note the docker build will link against Debian buster's D-Bus client libraries. 
 
 (D-Bus's ABI policy provides backwards compatiblity without relinking, but I have not put this policy to the test, and distributions are more than capable of ruining upstream's ABI compatibility.)
 
+## Licence
+
+GPLv3.
+
 ## TODO
 
 - Wayland support
