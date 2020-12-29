@@ -32,7 +32,8 @@ elif [ "$1" == "audit" ]; then
     cargo audit
 elif [ "$1" == "docker" ]; then
     shift;
-    DOCKER_BUILDKIT=1 docker build --file Dockerfile --output docker_target . "$@"
+    rust_version=$(tr -d '\n' <rust-toolchain)
+    DOCKER_BUILDKIT=1 docker build --build-arg rust_version="$rust_version" --file Dockerfile --output docker_target . "$@"
 elif [ "$1" == "" ]; then
     check_max_args 1
     cargo build

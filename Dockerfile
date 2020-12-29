@@ -1,4 +1,5 @@
-FROM rust:1.46.0-buster as buildenv
+ARG rust_version
+FROM rust:${rust_version}-buster as buildenv
 MAINTAINER Diego Veralli "diego@diegoveralli.com"
 
 ENV DEBIAN_FRONTEND noninteractive
